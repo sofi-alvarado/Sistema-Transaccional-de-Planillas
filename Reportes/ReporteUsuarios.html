@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.ui.draggable.js"></script>
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../js/printThis/printThis.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/ionicons.min.css" rel="stylesheet" />
+    <link href="../css/AdminLTE.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="pagina">
+        <section class="content-header">
+            <div class="text-center">
+                <h1>GESTIONAR ATENCIÓN MÉDICA</h1>
+                <label ID="lblFechaAtencion">Hoy</label>
+            </div>
+        </section>
+        <section class="content invoice">
+            <!-- LISTA DE LAS CITAS MÉDICAS QUE FUERON REGISTRADAS PARA EL DÍA ACTUAL -->
+            <Table>
+                <tr>
+                    <td rowspan="2">
+                        <Image ID="imgPaciente" Height="200px" Width="200px" src="../img/avatar9.jpg" />
+                    </td>
+                    <td>
+                        <strong>&nbsp;&nbsp;ID Cita:</strong>
+                        <label ID="lblIdCita">1</label><br />
+                        <input type="hidden" ID="hdIdCita" />
+                        <strong>&nbsp;&nbsp;Nombres:</strong>
+                        <label ID="lblNombres">Hugo Alexander</label><br />
+                        <strong>&nbsp;&nbsp;Apellido Paterno:</strong>
+                        <label ID="lblApellidoPaterno">Rodríguez</label><br />
+                        <strong>&nbsp;&nbsp;Apellido Materno:</strong>
+                        <label ID="lblApellidoMaterno">Cruz</label><br />
+                        <strong>&nbsp;&nbsp;Edad:</strong>
+                        <label ID="lblEdad">22</label><br />
+                        <strong>&nbsp;&nbsp;Sexo:</strong>
+                        <label ID="lblSexo">Masculino</label>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;&nbsp;<input type="button" class="btn btn-primary" Text="Realizar Atención" />
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<input type="button" ID="btnCancelar" class="btn btn-danger" Text="Cancelar" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>&nbsp;&nbsp;&nbsp;Hora de Atención: </label>
+                        <label></label>
+                    </td>
+                </tr>
+            </Table>
+        </section>
+    </div>
+    <button id="print_btn" type="button">Imprimir</button>
+    <script>
+        $(document).ready(function () {
+            $('#print_btn').click(function () {
+                $('#pagina').printThis();
+            });
+        });
+    </script>
+</body>
+</html>
