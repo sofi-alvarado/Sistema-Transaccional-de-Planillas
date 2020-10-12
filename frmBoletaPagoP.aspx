@@ -24,7 +24,10 @@
      <!-- Script para obtener el ID de los controles de ASP.Net -->
     <script type="text/javascript">
 
-        var ddlYear = '<%=txtBuscar.ClientID%>';
+        var ddlDUI = '<%=txtDUI.ClientID%>';
+        var ddlMes = '<%=ddlMes.ClientID%>';
+        var ddlYear = '<%=ddlYear.ClientID%>';
+
     </script>
 
     <section class="content-header">
@@ -40,29 +43,48 @@
                                <div class="form-group col-md-3">
                                   <br /><br />
                                      <div class="form-control-static col-md-12">
-                                          <span>Buscar</span>
+                                          <span>DUI</span>
                                      </div>
-                                            <asp:TextBox ID="txtBuscar" Text="" CssClass="form-control" runat="server" Enabled="false" PlaceHolder="Ingrese el usuario sin guiones"></asp:TextBox>
+                                            <asp:TextBox ID="txtDUI" Text="" CssClass="form-control" runat="server" Enabled="false" PlaceHolder="Ej.: 55961348-6"></asp:TextBox>
                                           
                                            
                                 </div>
-                                                <!-- Buscar -->
-                                <div class="form-group col-md-3">
-                                    <br /><br />
-                                       <div class="form-control-static col-md-12">
-                                       
-                                     </div>
-                                            <input id="btnBuscar" type="button" class="btn btn-primary" style="width:200px" value="Buscar" />
-                                </div>
-
+                                 <div class="form-group col-md-3">
+                                       <br /><br />
+                                          <div class="form-control-static col-md-12">
+                                              <span>Mes</span>
+                                          </div>
+                                                <asp:DropDownList ID="ddlMes" CssClass="form-control btn btn-default bg-gray" Enabled="false" runat="server" ClientIDMode="Static">
+                                                    <asp:ListItem Value="0">Enero</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <div class ="form-group col-md-1"></div>
+                                  </div>   
+                                    <div class="form-group col-md-3">
+                                       <br /><br />
+                                          <div class="form-control-static col-md-12">
+                                               <span >Año</span>
+                                           </div>
+                                                <asp:DropDownList ID="ddlYear" CssClass="form-control btn btn-default bg-gray" Enabled="false" runat="server" ClientIDMode="Static">
+                                                    <asp:ListItem Value="0">Enero</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <div class ="form-group col-md-1"></div>
+                                   </div>
+                                   <div class ="form-group col-md-1"></div>
                         </div>
                     </div>
                </div>
            </div>
-        
-            
-           
 
+            <!-- Buscar -->
+            <div class="row">
+                <div class="col-xs-6" align="right">
+                    <input id="btnBuscar" type="button" class="btn btn-primary" style="width:200px" value="Buscar" />
+                </div>
+                <div class="col-xs-6" align="left">
+                    <input id="btnLimpiar" type="button" class="btn btn-default bg-gray" style="width:200px" value="Limpiar" />
+                </div>
+            </div>
+            <hr />
             <!-- Datatable Part -->
             <div class="row">
                 <div class="col-xs-12">
